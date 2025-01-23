@@ -1,32 +1,20 @@
 # Web Scraping
 Este projeto tem como objetivo realizar o download de arquivos PDF a partir de links fornecidos, salvá-los em um diretório específico e compactá-los em um único arquivo ZIP para facilitar o armazenamento e compartilhamento.
 
-#Bibliotecas Utilizadas
+# Bibliotecas Utilizadas
 O projeto utiliza as seguintes bibliotecas:
 
-requests: Utilizada para realizar requisições HTTP e fazer o download dos arquivos PDF diretamente dos links fornecidos.
-os: Utilizada para manipulação de diretórios e arquivos no sistema operacional, como criação de pastas e organização.
-zipfile: Utilizada para criar e manipular arquivos ZIP, permitindo compactar os PDFs baixados.
+- `requests`: Utilizada para realizar requisições HTTP e fazer o download dos arquivos PDF diretamente dos links fornecidos.
+- `os`: Utilizada para manipulação de diretórios e arquivos no sistema operacional, como criação de pastas e organização.
+- `zipfile`: Utilizada para criar e manipular arquivos ZIP, permitindo compactar os PDFs baixados.
 Como todas essas bibliotecas são nativas do Python, não é necessário instalar pacotes adicionais.
 
-Funções Implementadas
-O projeto conta com as seguintes funções:
+Certifique-se de ter as bibliotecas instaladas antes de executar o projeto. Caso precise instalá-las, você pode utilizar o gerenciador de pacotes `pip` para instalar as dependências. Veja os exemplo abaixo:
 
-baixar_pdf(link, diretorio_output):
-
-Realiza o download de um arquivo PDF a partir de um link fornecido.
-Verifica se o diretório especificado para salvar os arquivos existe e o cria caso não exista.
-Salva o arquivo PDF no diretório de destino.
-compactar_pdfs_em_zip(pdfs_baixados, nome_arquivo_zip):
-
-Compacta uma lista de arquivos PDF em um único arquivo ZIP.
-Adiciona os PDFs ao arquivo ZIP utilizando apenas o nome do arquivo no interior do ZIP.
-Como Utilizar
-Links dos PDFs:
-
-Insira os links dos arquivos PDF que deseja baixar diretamente no código, na seção principal do script.
-No exemplo, os links estão definidos nas variáveis link_pdf_1 e link_pdf_2.
-Execução do Código:
+```bash
+pip install requests
+```
+Certifique-se de ter uma conexão com a internet durante a instalação para que o pip possa baixar e instalar as bibliotecas necessárias.
 
 Certifique-se de estar no diretório do script Python e execute o seguinte comando no terminal:
 bash
@@ -35,18 +23,25 @@ Edit
 python script.py  
 Resultado:
 
-Os arquivos PDF serão baixados e salvos no diretório PDFs_extraidos.
-Após o download, os arquivos serão compactados em um arquivo ZIP chamado PDFs_baixados.zip, no mesmo diretório.
-Estrutura do Projeto
-O bloco principal do script (if __name__ == '__main__':) define os links dos PDFs, chama as funções de download e compactação, e exibe mensagens indicando o progresso e conclusão do processo.
-A lista pdfs_baixados armazena os caminhos dos arquivos PDF baixados, permitindo que sejam compactados em seguida.
-Exemplos de Links
-Os links utilizados neste exemplo correspondem a arquivos disponibilizados pela ANS:
+## Como Utilizar
 
-Anexo I
-Anexo II
-Personalização
-Você pode personalizar o projeto de várias formas:
+1. Clone o repositório para sua máquina local utilizando o seguinte comando:
+```bash
+git clone https://github.com/NicolasBastos027/WebScraping.git
+```
 
-Alterar os links dos PDFs para outros documentos de sua escolha.
-Modificar o diretório de saída (diretorio_output) ou o nome do arquivo ZIP gerado.
+2. Navegue para o diretório do projeto:
+3. Defina a URL da página web que deseja acessar na variável `url`.
+4. Execute o script Python e aguarde a conclusão.
+```bash
+python codigo.py
+```
+5. Os arquivos que correspondem ao padrão desejado serão baixados e salvos na pasta atual.
+6. Após o download, os arquivos serão compactados em um arquivo zip com o destino especificados.
+7. Verifique o arquivo zip gerado para acessar os arquivos baixados.
+
+Tenha em mente que você pode personalizar o padrão utilizado para filtrar os links desejados ajustando a expressão regular na variável `padrao` no arquivo.
+
+---
+
+Este projeto é um exemplo básico de web scraping e manipulação de arquivos usando Python. Sinta-se à vontade para adaptar e expandir o código de acordo com suas necessidades.
